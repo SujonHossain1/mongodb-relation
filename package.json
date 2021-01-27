@@ -1,0 +1,16 @@
+{
+  "name": "mongoDB_practice",
+  "version": "1.0.0",
+  "description": "Now I am using yarn package",
+  "main": "server.js",
+  "author": "Sujon Hossain",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13",
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "server": "nodemon server.js"
+  }
+}
