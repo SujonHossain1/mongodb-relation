@@ -43,8 +43,10 @@ const server = app.listen(PORT, () => {
     if (process.env.NODE_ENV === 'production') {
         console.log('Live Database Connection Successfully Done');
     } else {
-        mongoose.connect('mongodb://localhost:27017/mongodb-relationship', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
-            .then(() => console.log('Local Database Connection Successfully Done'))
-            .catch(err => console.error(err))
+        mongoose.connect('mongodb://localhost:27017/mongodb-relationship', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
+        const db = mongoose.connection;
+        db.on('connected', () => {
+            console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
+        })
     }
 })

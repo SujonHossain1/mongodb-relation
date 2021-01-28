@@ -14,3 +14,13 @@ exports.createProduct = async (req, res, next) => {
         res.send(err)
     }
 };
+
+exports.getProducts = async (req, res, next) => {
+    try {
+        const products = await Category.findOne({ categorySlug: req.params.categorySlug }).populate("products");
+        res.send(products);
+    } catch (err) {
+        res.send(err);
+    }
+
+}
