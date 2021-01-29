@@ -16,11 +16,13 @@ app.use(middleware);
 const categoryRoute = require('./routes/category');
 const subCategoryRoute = require('./routes/subCategory');
 const productRoutes = require('./routes/product');
+const userRoutes = require('./routes/user');
 
 // Application all routs --- 
-app.use('/api/categories', categoryRoute,);
+app.use('/api/categories', categoryRoute);
 app.use('/api/sub-categories', subCategoryRoute);
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 
 
